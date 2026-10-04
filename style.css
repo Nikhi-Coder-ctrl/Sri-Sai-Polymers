@@ -212,6 +212,62 @@ input:focus, select:focus, textarea:focus { border-color: var(--green); box-shad
 .footer a { display: block; color: rgba(255,255,255,.62); font-size: 14px; margin: 10px 0; }
 .footer-bottom { border-top: 1px solid rgba(255,255,255,.1); margin-top: 45px; padding-top: 20px; display: flex; justify-content: space-between; gap: 20px; color: rgba(255,255,255,.42); font-size: 12px; }
 
+
+
+.photo-showcase {
+  background: #ffffff;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.photo-card {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.photo-card img {
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+  display: block;
+}
+
+.photo-body {
+  padding: 22px 24px 26px;
+}
+
+.photo-body h3 {
+  margin: 0 0 8px;
+  font: 700 24px/1.2 "Manrope", sans-serif;
+}
+
+.photo-body p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.product-visual.real-photo {
+  height: 210px;
+  background: #f2f4ef;
+  padding: 0;
+}
+
+.product-visual.real-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
 @media (max-width: 900px) {
   .menu-toggle { display: block; }
   .nav-links {
@@ -224,7 +280,7 @@ input:focus, select:focus, textarea:focus { border-color: var(--green); box-shad
   .nav-cta { margin-top: 8px; text-align: center; }
   .hero-grid, .split, .section-head, .sustainability-grid, .contact-grid { grid-template-columns: 1fr; gap: 36px; }
   .trust-grid { grid-template-columns: repeat(2, 1fr); }
-  .values-grid, .product-grid, .process-grid { grid-template-columns: 1fr 1fr; }
+  .values-grid, .product-grid, .process-grid, .photo-grid { grid-template-columns: 1fr 1fr; }
   .cta-flex { align-items: flex-start; flex-direction: column; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
 }
@@ -234,7 +290,7 @@ input:focus, select:focus, textarea:focus { border-color: var(--green); box-shad
   .hero { padding: 72px 0 62px; }
   .hero h1 { font-size: 44px; }
   .section { padding: 72px 0; }
-  .trust-grid, .values-grid, .product-grid, .process-grid, .field-row, .footer-grid { grid-template-columns: 1fr; }
+  .trust-grid, .values-grid, .product-grid, .process-grid, .photo-grid, .field-row, .footer-grid { grid-template-columns: 1fr; }
   .trust-grid div { border-right: 0; border-bottom: 1px solid var(--line); padding-left: 0; }
   .product-visual { height: 160px; }
   .footer-bottom { flex-direction: column; }
@@ -289,5 +345,123 @@ input:focus, select:focus, textarea:focus { border-color: var(--green); box-shad
 
   .whatsapp-label {
     display: none;
+  }
+}
+
+.about-gallery {
+  margin-top: 46px;
+  display: grid;
+  grid-template-columns: 1.35fr .65fr;
+  gap: 22px;
+}
+
+.gallery-card {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 24px;
+  background: white;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-large img {
+  height: 320px;
+}
+
+.gallery-card figcaption {
+  padding: 14px 18px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.product-photo {
+  background: #fff;
+}
+
+.product-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.product-visual span {
+  display: inline-block;
+}
+
+.process-feature-image {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  align-items: stretch;
+  gap: 0;
+  margin-bottom: 24px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 24px;
+  overflow: hidden;
+  background: rgba(255,255,255,.04);
+}
+
+.process-feature-image img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+.process-feature-image div {
+  padding: 34px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.process-feature-image span {
+  color: var(--lime);
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-size: 12px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.process-feature-image strong {
+  font: 700 26px/1.25 "Manrope", sans-serif;
+  color: white;
+}
+
+@media (max-width: 900px) {
+  .about-gallery,
+  .process-feature-image {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-card img,
+  .gallery-large img,
+  .process-feature-image img {
+    height: 260px;
+  }
+}
+
+@media (max-width: 620px) {
+  .gallery-card img,
+  .gallery-large img,
+  .process-feature-image img {
+    height: 210px;
+  }
+
+  .process-feature-image div {
+    padding: 24px;
+  }
+
+  .process-feature-image strong {
+    font-size: 21px;
   }
 }
