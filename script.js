@@ -14,9 +14,3 @@ document.querySelectorAll(".nav-links a").forEach(link => {
 });
 
 document.getElementById("year").textContent = new Date().getFullYear();
-
-document.getElementById("contactForm").addEventListener("submit", (event) => {
-  event.preventDefault();
-  const note = document.getElementById("formNote");
-  note.textContent = "Thank you. This demo form is ready to be connected to your email service.";
-});
